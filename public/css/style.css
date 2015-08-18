@@ -1,0 +1,37 @@
+
+.recordContainer {
+	display: inline-block;
+	vertical-align: top;
+}
+
+#otherRecord .controlfield.wasUsed,
+#otherRecord .datafield.wasUsed,
+#otherRecord .subfield.wasUsed {
+	background-color: #aebd63;
+}
+
+
+#mergedRecord .controlfield.fromOther,
+#mergedRecord .datafield.fromOther,
+#mergedRecord .subfield.fromOther {
+	background-color: #aebd63;
+}
+
+#mergedRecord .controlfield.fromPreferred,
+#mergedRecord .datafield.fromPreferred,
+#mergedRecord .subfield.fromPreferred {
+	background-color: #e3e6eb;
+}
+/* 
+  red: #8f2831 
+  blue: #677c97;
+ */
+
+.buttons > span {
+	cursor: pointer;
+	margin: 2px;
+}
+.buttons > .selected {
+	border: 1px solid black;
+	
+}

@@ -1,0 +1,32 @@
+{
+  "name": "super-converter-3000",
+  "version": "0.0.0",
+  "description": "Converts marc records to other marc records.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "marc",
+    "conversion"
+  ],
+  "author": "Tuomo Virolainen <tuomo.virolainen@helsinki.fi>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "marc-record-js": "^0.1.1",
+    "marc-record-validate": "git://github.com/NatLibFi/marc-record-validate",
+    "melinda-api-client": "^1.0.1",
+    "q": "^1.4.1",
+    "react": "^0.13.3"
+  },
+  "devDependencies": {
+    "babelify": "^6.1.3",
+    "brfs": "^1.4.1",
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^4.0.0",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-exorcise": "^2.1.0"
+  }
+}

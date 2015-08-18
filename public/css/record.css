@@ -1,0 +1,37 @@
+.record {
+	width: 480px;
+	font-family: Fixed, monospace;
+	border: 1px solid black;
+	font-size: 10pt;
+	padding: 2px;
+	
+}
+.fieldList {
+	overflow: scroll;
+	white-space: pre;
+	min-height: 600px;
+}
+
+.data, .header {
+	width: 100%;
+	border: 1px solid black;
+	height: 5%;
+}
+
+.header {
+	height: 20px;
+	font-weight: bold;
+}
+
+.tag {
+	color: #0000DD;
+}
+
+.ind1, .ind2 {
+	color: #DD0000;
+}
+
+.subfield > .code, 
+.subfield > .marker {
+	color: #DD00DD;
+}
