@@ -25,6 +25,7 @@ module.exports = function(grunt) {
 				transform: ['babelify', 'brfs'],
 				watch: true,
 				keepAlive: false,
+				
 				browserifyOptions: {
 					debug: true
 				}
@@ -51,10 +52,10 @@ module.exports = function(grunt) {
 				options: {
 					livereload: true
 				},
-				files: 'public/scripts/bundle.js',
+				files: 'public/bundle.js',
 			},
 			browserify: {
-				files: 'public/scripts/bundle.map.js',
+				files: 'build/bundle.map.js',
 				tasks: ['exorcise']
 			}
 		}

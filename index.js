@@ -1,15 +1,9 @@
 "use strict";
 
-var MelindaClient = require('melinda-api-client');
 var express = require('express');
-
-var config = {
-    endpoint: "http://melinda.kansalliskirjasto.fi/API/v1/",
-    user: process.env.melinda_batch_username,
-    password: process.env.melinda_batch_password
-};
-
-var client = new MelindaClient(config);
+var Serializers = require('marc-record-serializers');
+var fs = require('fs');
+var path = require('path');
 
 var app = express();
 app.use(express.static('public'));
@@ -19,16 +13,33 @@ app.get('/:id', function (req, res) {
   res.send('Hello World!' + req.params.id);
 });
 
-app.get('/record/:id', function(req, res) {
+app.get('/record/:number', function(req, res) {
 
-	console.log("Loading record " + req.params.id);	
-	client.loadRecord(req.params.id, function(record) {
-		console.log(record);	
-		res.send(record);
-	}).catch(function(err) {
-		console.log(err);
-		res.send(err);
-	}).done();
+	var file = "files1.mrc";
+	var recordsFile = path.resolve(__dirname, "data/" + file);
+	var parser = new Serializers.ISO2709.ParseStream();
+
+	var readStream = fs.createReadStream(recordsFile);
+	readStream.setEncoding('utf8');
+
+	readStream.pipe(parser);
+	var count = 0;
+	var found = false;
+	parser.on('data', function(record) {
+		count++;
+		if (count === parseInt(req.params.number, 10)) {
+			
+			res.send(record.toJsonObject());
+			found = true;
+		}
+		
+	});
+	parser.on('end', function() {
+		if (!found) {
+			res.sendStatus(404);
+		}
+	})
+
 
 
 });

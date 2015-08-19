@@ -13,12 +13,16 @@
   "author": "Tuomo Virolainen <tuomo.virolainen@helsinki.fi>",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.5.4",
     "express": "^4.13.3",
+    "hash-router": "^0.4.0",
     "marc-record-js": "^0.1.1",
+    "marc-record-serializers": "git://github.com/petuomin/marc-record-serializers",
     "marc-record-validate": "git://github.com/NatLibFi/marc-record-validate",
     "melinda-api-client": "^1.0.1",
     "q": "^1.4.1",
-    "react": "^0.13.3"
+    "react": "^0.13.3",
+    "routie": "0.0.1"
   },
   "devDependencies": {
     "babelify": "^6.1.3",
